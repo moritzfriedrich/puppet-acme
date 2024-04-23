@@ -21,7 +21,7 @@ define acme::request (
   String $csr,
   String $use_account,
   String $use_profile,
-  Enum['buypass', 'buypass_test', 'letsencrypt', 'letsencrypt_test', 'sslcom', 'zerossl'] $ca = $acme::default_ca,
+  Variant[Enum['buypass', 'buypass_test', 'letsencrypt', 'letsencrypt_test', 'sslcom', 'zerossl'],Stdlib::HTTPUrl] $ca = $acme::default_ca,
   String $domain = $name,
   Integer $renew_days = $acme::renew_days,
   Boolean $ocsp_must_staple = true,

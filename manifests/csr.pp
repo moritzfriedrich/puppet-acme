@@ -26,7 +26,7 @@ define acme::csr (
   Boolean $force = true,
   Boolean $ocsp_must_staple = true,
   Integer $renew_days = $acme::renew_days,
-  Optional[Enum['buypass', 'buypass_test', 'letsencrypt', 'letsencrypt_test', 'sslcom', 'zerossl']] $ca = undef,
+  Variant[Enum['buypass', 'buypass_test', 'letsencrypt', 'letsencrypt_test', 'sslcom', 'zerossl'],Stdlib::HTTPUrl,Undef] $ca = undef,
   Optional[String] $country = undef,
   Optional[String] $state = undef,
   Optional[String] $locality = undef,
